@@ -11,7 +11,7 @@ class BottomBarTab extends StatefulWidget {
 }
 
 class _BottomBarTabState extends State<BottomBarTab> {
-  final List<Map<String, Object>> _pages = [
+  final List<Map<String, Object>> _pages = const [
     {
       'page': CategoriesScreen(),
       'title': 'Categories',
@@ -21,16 +21,6 @@ class _BottomBarTabState extends State<BottomBarTab> {
       'title': 'Favorites',
     }
   ];
-
-  // final List<Widget> _pages = const [
-  //   CategoriesScreen(),
-  //   FavoritesScreen(),
-  // ];
-
-  // final List<String> selectedTitles = const [
-  //   'Categories',
-  //   'Favorites',
-  // ];
 
   int _selectedPageIndex = 0;
 
