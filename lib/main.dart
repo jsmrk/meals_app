@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.pink,
+          primarySwatch: Colors.brown,
           accentColor: Colors.amber,
         ),
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
