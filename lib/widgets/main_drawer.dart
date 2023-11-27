@@ -4,7 +4,11 @@ import 'package:meals_app/screens/filter_screen.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
-  Widget buildListTile(String title, IconData icon, VoidCallback tapHandler) {
+  Widget buildListTile(
+    String title,
+    IconData icon,
+    VoidCallback tapHandler,
+  ) {
     return ListTile(
       leading: Icon(
         icon,

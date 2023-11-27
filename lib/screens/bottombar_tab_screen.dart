@@ -36,6 +36,7 @@ class _BottomBarTabState extends State<BottomBarTab> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'] as String),
+        elevation: 0,
       ),
       drawer: const MainDrawer(),
       body: _pages[_selectedPageIndex]['page'] as Widget,
