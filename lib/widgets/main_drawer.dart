@@ -43,12 +43,17 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          buildListTile('Meals', Icons.restaurant,
-              () => Navigator.of(context).pushNamed('/')),
+          buildListTile(
+            'Meals',
+            Icons.restaurant,
+            () => Navigator.of(context).pushReplacementNamed(
+                '/'), // the .pushreplacedmenNamed doesnt stack the pages but instead it deletes and replace it with the new route page
+          ),
           buildListTile(
             'Favorites',
             Icons.settings,
-            () => Navigator.of(context).pushNamed(FilterScreen.routeName),
+            () => Navigator.of(context)
+                .pushReplacementNamed(FilterScreen.routeName),
           ),
         ],
       ),
