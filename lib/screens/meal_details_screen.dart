@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/dummy_data.dart';
 
 class MealDeatailsScreen extends StatelessWidget {
-  const MealDeatailsScreen({super.key});
-
   static const routeName = '/meal_details_screen';
+  final Function toggleFavorite;
+  final Function isFavorite;
+
+  const MealDeatailsScreen(this.toggleFavorite, this.isFavorite, {super.key});
 
   Widget buildSectionTitle(BuildContext context, String sectionTitle) {
     return Container(
@@ -34,7 +36,9 @@ class MealDeatailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mealId = ModalRoute.of(context)!.settings.arguments;
-    final selectedMeal = dummyMeals.firstWhere((meal) => meal.id == mealId);
+    final selectedMeal = dummyMeals.firstWhere(
+      (meal) => meal.id == mealId,
+    );
 
     return Scaffold(
       appBar: AppBar(title: Text(selectedMeal.title)),
@@ -87,11 +91,15 @@ class MealDeatailsScreen extends StatelessWidget {
           ],
         ),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: const Icon(Icons.delete),
+      //   onPressed: () {
+      //     Navigator.of(context).pop(mealId);
+      //   },
+      // ), // this is to demonstrate deleting a meal
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.delete),
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
+        onPressed: () => toggleFavorite(mealId),
+        child: Icon(isFavorite(mealId) ? Icons.star : Icons.star_border),
       ),
     );
   }
