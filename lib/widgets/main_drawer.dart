@@ -54,7 +54,7 @@ class MainDrawer extends StatelessWidget {
                 '/'), // the .pushreplacedmenNamed doesnt stack the pages but instead it deletes and replace it with the new route page
           ),
           buildListTile(
-            'Favorites',
+            'Settings',
             Icons.settings,
             () => Navigator.of(context)
                 .pushReplacementNamed(FilterScreen.routeName),
